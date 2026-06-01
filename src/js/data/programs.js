@@ -283,6 +283,7 @@ export const PROGRAMS = [
     isHot: true,
     isNew: false,
     conversionEstimate: 12,
+    partnerUrl: 'https://naiawork.com/g/k3dfvevwit172072428f65a37ca03d/?erid=MvGzQC98w3Z1gMq1mwW49tc7',
     details: {
       howItWorks: 'Приводишь человека, который хочет войти в IT → он покупает курс → тебе выплата.',
       conditions: [

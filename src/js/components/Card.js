@@ -6,9 +6,12 @@ export function renderCard(program) {
     program.isNew && '<span class="badge badge-new">Новое</span>',
   ].filter(Boolean).join('');
 
+  const href   = program.partnerUrl || `/pages/program.html?id=${program.id}`;
+  const target = program.partnerUrl ? 'target="_blank" rel="noopener noreferrer"' : '';
+
   return `
     <a class="program-card${program.isHot ? ' is-hot' : ''}"
-       href="/pages/program.html?id=${program.id}"
+       href="${href}" ${target}
        data-program-id="${program.id}">
       <div class="card-header">
         <div class="card-logo">
@@ -42,7 +45,6 @@ export function renderCard(program) {
   `;
 }
 
-// Attach click tracking to all cards in a container
 export function attachCardTracking(container, programs) {
   container.addEventListener('click', e => {
     const card = e.target.closest('.program-card');

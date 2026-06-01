@@ -111,7 +111,7 @@ function renderPage() {
                 </div>
               </div>
 
-              <button class="btn btn-primary take-btn" onclick="handleTake()">
+              <button class="btn btn-primary take-btn" onclick="handleTake('${program.partnerUrl || ''}')">
                 Взять темку →
               </button>
               <p class="disclaimer">
@@ -144,6 +144,10 @@ function renderPage() {
   `;
 }
 
-window.handleTake = () => {
-  alert('Здесь будет реальная партнёрская ссылка (Admitad / ActionPay).\nДобавь ссылки в data/programs.js после регистрации в партнёрке.');
+window.handleTake = (url) => {
+  if (url) {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  } else {
+    alert('Партнёрская ссылка скоро появится — программа на модерации в Admitad.');
+  }
 };
