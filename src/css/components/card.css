@@ -1,0 +1,114 @@
+.program-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-decoration: none;
+  color: inherit;
+}
+.program-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-glow) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.program-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+.program-card:hover::before { opacity: 1; }
+.program-card.is-hot        { border-color: rgba(255, 107, 53, 0.3); }
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.card-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  background: var(--bg-elevated);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.card-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+.card-badges {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.card-body  { flex: 1; position: relative; }
+
+.card-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-2);
+  line-height: 1.2;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.card-reward {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  position: relative;
+}
+.card-reward-amount {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+  color: var(--money);
+  line-height: 1;
+}
+.card-reward-per { font-size: 13px; color: var(--text-muted); }
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.card-difficulty {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.difficulty-dot          { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.difficulty-dot.easy     { background: var(--easy); }
+.difficulty-dot.medium   { background: var(--medium); }
+.difficulty-dot.hard     { background: var(--hard); }
+
+.card-btn { padding: var(--space-2) var(--space-5); font-size: 12px; }

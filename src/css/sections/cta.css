@@ -1,0 +1,46 @@
+.cta-section { padding: var(--space-20) 0; }
+
+.cta-card {
+  background: linear-gradient(135deg, #1A0F00 0%, #0D0D0D 40%, #0A001A 100%);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 500px; height: 300px;
+  background: var(--accent);
+  filter: blur(120px);
+  opacity: 0.1;
+}
+
+.cta-title {
+  font-size: clamp(28px, 4vw, 48px);
+  margin-bottom: var(--space-5);
+  position: relative;
+}
+.cta-title-accent { color: var(--accent); }
+
+.cta-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto var(--space-8);
+  line-height: 1.6;
+  position: relative;
+}
+
+.cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  position: relative;
+}

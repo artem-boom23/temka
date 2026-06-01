@@ -1,0 +1,38 @@
+/* ─── Base ─── */
+@import 'base/variables.css';
+@import 'base/reset.css';
+@import 'base/typography.css';
+
+/* ─── Layout ─── */
+@import 'layout/container.css';
+@import 'layout/footer.css';
+
+/* ─── Components ─── */
+@import 'components/button.css';
+@import 'components/badge.css';
+@import 'components/header.css';
+@import 'components/filter.css';
+@import 'components/card.css';
+
+/* ─── Sections ─── */
+@import 'sections/hero.css';
+@import 'sections/catalog.css';
+@import 'sections/calculator.css';
+@import 'sections/how-it-works.css';
+@import 'sections/cta.css';
+
+/* ─── Pages ─── */
+@import 'pages/program.css';
+@import 'pages/about.css';
+@import 'pages/admin.css';
+
+/* ─── Global ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
